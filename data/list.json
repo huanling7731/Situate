@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "projectName": "哈鹿加油站",
+        "projectDes": "2007",
+        "projectImg": "halu.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
+    }, {
+        "id": 2,
+        "projectName": "白象食品博物馆",
+        "projectDes": "2008",
+        "projectImg": "halu.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
+    }, {
+        "id": 3,
+        "projectName": "项目名称",
+        "projectDes": "项目描述，原网页中式是年份，如果不需要可以不写，可以替换成其他简短的描述",
+        "projectImg": "图片名称.jpg，最好是英文，不需要太大，这个页面图片较多，太大影响性能，pad屏幕可清晰展示即可，如果没有小的可以统一给我大的，最后批量压缩",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 1,
+        "projectName": "哈鹿加油站",
+        "projectDes": "2007",
+        "projectImg": "halu.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
+    }, {
+        "id": 2,
+        "projectName": "白象食品博物馆",
+        "projectDes": "2008",
+        "projectImg": "halu.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
+    }, {
+        "id": 3,
+        "projectName": "项目名称",
+        "projectDes": "项目描述，原网页中式是年份，如果不需要可以不写，可以替换成其他简短的描述",
+        "projectImg": "图片名称.jpg，最好是英文，不需要太大，这个页面图片较多，太大影响性能，pad屏幕可清晰展示即可，如果没有小的可以统一给我大的，最后批量压缩",
+        "projectUrl": "公众号链接"
+    }
+]

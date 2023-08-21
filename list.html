@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="pinterest" content="nopin" />
+    <title>SITUATE</title>
+    <meta name="description" content="直向建筑">
+    <meta name="keywords" content="直向建筑,直向,董功,直向事务所,董功老师">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, target-densitydpi=medium-dpi, minimal-ui">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" type="text/css" href="./css/xiwen.css">
+    <link rel="stylesheet" type="text/css" href="./css/website.css">
+    <link rel="stylesheet" type="text/css" href="/public/home/css/xiwen.css">
+    <style>
+        .Contact{font-family:"Noto Sans S Chinese Thin";text-align: center; margin-top:2px;font-size:12px;Width:320px;Float:center;margin-left:auto;margin-right:auto;}
+        .file{font-family:"Noto Sans S Chinese Thin";text-align: center;padding-bottom:20px;margin-left:auto;margin-right:auto;font-size:8px;}
+        a{color:lightgray}
+    </style>
+</head>
+<body class="showmenu1">
+    <div class="header" id="header">
+        <div class="auto1180 clear">
+            <a href="" class="logo"><img src="./img/logo_vertical.png" height="33" alt=""></a>
+            <a href="javascript:;" id="menu" class="menu"></a>
+            <ul class="navigation">
+                <li>
+                    <a href="./list.html">项目展示</a>
+                </li>
+                <li>
+                    <a href="./contact.html">联系我们</a>
+                </li>
+            </ul>
+        </div> 
+    </div>
+    <ul class="projects clear auto1180" id="container" page="1">
+        <!-- <li>
+            <a href="https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg">
+                <div class="project-image lazyload loaded" style="background-image: url(./img/list/halu.jpg);"></div>
+                <span><b>2018</b>阳朔糖舍酒店</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://www.vectorarchitects.com/projects/30">
+                <div class="project-image lazyload loaded" style="background-image: url(&quot;https://www.vectorarchitects.com/uploads/img/2018/11/5be50789ac220_min.jpg&quot;);"></div>
+                <span><b>2017</b>船长之家改造</span>
+            </a>
+        </li> -->
+    </ul>
+    <!-- <div id="lian" style="padding-top: 1px;">
+        <div class="contact auto1180">
+                <img src="/public/home/image/map3.png" class="xs-hidden" alt="">
+                <img src="/public/home/image/map3.jpg" class="xs-visible" alt="">
+                <div class="address">
+                    <div class="lian">联系方式</div>
+                    <p style="color:#AAA;">北京市朝阳区工人体育场北路4号22号楼409室，100027</p>
+                    <p><a href="tel:+8610-65167798">电话：+8610-65167798</a></p>
+                    <p><a href="tel:+8610-65167706">传真：+8610-65167706</a></p>
+                    <p><a href="mailto:info@vectorarchitects.com">电邮：info@vectorarchitects.com</a></p>
+                    <p><a href="mailto:hr@vectorarchitects.com">工作申请：hr@vectorarchitects.com</a></p>
+                    <div class="share">
+                        <a href="javascript:;" class="wechat"><img src="/public/home/image/qrcode.jpg" alt=""></a>
+                        <a href="https://www.weibo.com/vectorarchitects" target="_blank" class="weibo"></a>
+                        <a href="https://www.instagram.com/vectorarchitects/" target="_blank" class="instagram"></a>
+                        <a href="https://www.facebook.com/vectorarchi/" target="_blank" class="facebook"></a>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <iframe src="https://mp.weixin.qq.com/mp/wappoc_appmsgcaptcha?poc_token=HJzk4mSjzcWZg5gh9EmPW-m_f9h0u_W6-GV5bcoy&target_url=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FbpgaDPFqaKiQR_wkDz9Sbg">
+    </iframe> -->
+    <div class="file">
+        <div style="color:lightgray;">SITUATE Architecture © All rights reserved.</div>
+        <a href="https://beian.miit.gov.cn/">京ICP备18058515号</a>
+    </div>
+</body>
+<script>
+    HTMLElement.prototype.appendHTML = function(html) {
+        let divTemp = document.createElement("div");
+        let nodes = null;
+        let fragment = document.createDocumentFragment();
+        divTemp.innerHTML = html;
+        nodes = divTemp.childNodes;
+        nodes.forEach(item => {
+            fragment.appendChild(item.cloneNode(true));
+        })
+        // 插入到最后 append
+        this.appendChild(fragment);
+        // 在最前插入 prepend
+        // this.insertBefore(fragment, this.firstChild);
+        nodes = null;
+        fragment = null;
+    };
+
+    function render(data) {
+        for(var i=0; i<data.length; i++) {
+            var item = data[i];
+            var li = `<li>
+                        <a href="${item.projectUrl}">
+                            <div class="project-image" style="background-image: url(./img/list/${item.projectImg});"></div>
+                            <span><b>${item.projectDes}</b>${item.projectName}</span>
+                        </a>
+                    </li>`;
+            document.getElementById('container').appendHTML(li);
+        }
+    }
+
+    var data = [
+        {
+            "id": 1,
+            "projectName": "哈鹿加油站",
+            "projectDes": "2007",
+            "projectImg": "halu.jpg",
+            "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
+        }, {
+            "id": 2,
+            "projectName": "白象食品博物馆",
+            "projectDes": "2008",
+            "projectImg": "baixiang.jpeg",
+            "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
+        },
+        {
+            "id": 1,
+            "projectName": "哈鹿加油站",
+            "projectDes": "2007",
+            "projectImg": "halu.jpg",
+            "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
+        }, {
+            "id": 2,
+            "projectName": "白象食品博物馆",
+            "projectDes": "2008",
+            "projectImg": "baixiang.jpeg",
+            "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
+        },
+        {
+            "id": 1,
+            "projectName": "哈鹿加油站",
+            "projectDes": "2007",
+            "projectImg": "halu.jpg",
+            "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
+        }, {
+            "id": 2,
+            "projectName": "白象食品博物馆",
+            "projectDes": "2008",
+            "projectImg": "baixiang.jpeg",
+            "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
+        }
+    ];
+
+    render(data);
+
+    var url = "./data/list.json"
+    // 申明一个XMLHttpRequest
+    var request = new XMLHttpRequest();
+    // 设置请求方法与路径
+    request.open("get", url);
+    // 不发送数据到服务器
+    request.send(null);
+    //XHR对象获取到返回信息后执行
+    request.onload = function () {
+        // 解析获取到的数据
+        var data = JSON.parse(request.responseText);
+        console.log(data);
+    }
+
+    function show () {
+        var body = document.getElementsByTagName('body')[0];
+        body.classList.toggle('showmenu');
+    }
+
+    document.getElementById("menu").addEventListener("click", show);
+
+    // $(function(){
+    //     $(window).scroll(function(event) {
+    //         if($('body').hasClass('loading-data')) return;
+    //         var v = $(window).height() + $(window).scrollTop();
+    //         if($(document).height() <= v){
+    //             $('body').addClass('loading-data');
+    //             var page = parseInt($('#container').attr('page'));
+    //             $.get('/getProject?page=' + page, function(data){
+    //                 var data = $.parseJSON(data);
+    //                 // console.log(data)
+    //                 for(var i=0; i<data.length; i++){
+    //                     var item = data[i];
+    //                     var li = $(`<li>
+    //                                     <a href="http://www.vectorarchitects.com/projects${item.id}">
+    //                                         <div class="project-image" style="background-image: url(/uploads/img/${item.thumbnail});"></div>
+    //                                         <span><b>${item.year}</b>${item.title}</span>
+    //                                     </a>
+    //                                 </li>`);
+    //                     $('#container').append(li);
+    //                 }
+    //                 page++;
+    //                 $('#container').attr('page', page);
+    //                 if(data.length != 0){
+    //                     $('body').removeClass('loading-data');
+    //                 }
+    //             });
+    //         }
+    //     });
+    
+    //     // $('.filter-text').click(function(event) {
+    //     //  var wrap = $('.filter-wrap');
+    //     //  if(wrap.hasClass('show')){
+    //     //      wrap.width(0).removeClass('show');
+    //     //  }else{
+    //     //      wrap.width(wrap.attr('data-width')).addClass('show');
+    //     //  }
+    //     // });
+    // });
+    </script>
+</html>
