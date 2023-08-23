@@ -2,7 +2,9 @@
 /* CSS Document */
 
 @font-face {
-    font-family: 'Helvetica_0';
+    /* font-family: 'Cera Pro';
+	src: url('fonts/Cera Pro.eot'); */
+	font-family: 'Helvetica_0';
     src: url('fonts/Helvetica_0.eot');
     src: url('fonts/Helvetica_0.eot') format('embedded-opentype'),
          url('fonts/Helvetica_0.woff2') format('woff2'),
@@ -56,6 +58,12 @@ input, textarea, button { border-radius: 0; }
 
 .cn .enEl, .en .cnEl {
 	display: none;
+}
+section {
+	display: none;
+}
+.showTab {
+	display: block;
 }
 
 .clear:after { display:block; clear:both; content:''; visibility:hidden; height:0; }.clear { zoom:1; }
@@ -311,9 +319,11 @@ height: 200px;
 			}
 		}
 	.hasimage-content { overflow: hidden; margin-top: calc(100vh - 63px); background-color: #FFF; position: relative; z-index: 1; }
-	.media1 { display: flex; flex-direction: row; align-items: center; justify-content: center; }
+	.media1 { 
+		margin: 80px 0;
+		display: flex; flex-direction: row; align-items: center; justify-content: center; }
 		.media1 dt { width: 58.98%; text-align:justify; }
-			.media1 h2 { font-size: 16px; margin: 80px 0 12px; }
+			.media1 h2 { font-size: 16px; margin: 0 0 12px; }
 		.media1 dd { width: 41.02%; height: 100%; text-align: center; }
 			.resume_download { padding-right: 20px; background: url(../img/download-black.svg) no-repeat 100% 50%; background-size: auto 14px; color: #474342; }
 	.bgray { background-color: #F7F7F7; padding: 0 0 60px; margin: 60px 0 0; }
@@ -582,7 +592,7 @@ height: 200px;
 			.media1 h2 { margin: 20px 0 12px; }
 			.bgray { padding-top: 1px; }
 			.swiper-media { margin-top: 20px; }
-		.media1 dd { padding: 80px 0 40px; }
+		.media1 dd { padding: 0 0 40px; }
 		.media1 dd:empty { padding: 40px 0 0; }
 		
 		
@@ -654,7 +664,7 @@ height: 200px;
 		left: 50%;
 		}
 	#zhi{
-		padding-top: 45px;
+		/* padding-top: 45px; */
 	}
 	#dang{
 		padding-top: 100px;
