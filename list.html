@@ -9,26 +9,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, target-densitydpi=medium-dpi, minimal-ui">
     <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
-    <link rel="stylesheet" type="text/css" href="./css/xiwen.css">
-    <link rel="stylesheet" type="text/css" href="./css/website.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/xiwen.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/website.css">
     <link rel="stylesheet" type="text/css" href="/public/home/css/xiwen.css">
     <style>
         .Contact{font-family:"Noto Sans S Chinese Thin";text-align: center; margin-top:2px;font-size:12px;Width:320px;Float:center;margin-left:auto;margin-right:auto;}
         .file{font-family:"Noto Sans S Chinese Thin";text-align: center;padding-bottom:20px;margin-left:auto;margin-right:auto;font-size:8px;}
         a{color:lightgray}
     </style>
+    <script src="./static/js/jquery-3.7.0.min.js"></script>
 </head>
-<body class="showmenu1">
+<body class="cn">
     <div class="header" id="header">
         <div class="auto1180 clear">
-            <a href="" class="logo"><img src="./img/logo_vertical.png" height="33" alt=""></a>
+            <a href="" class="logo"><img src="./static/img/logo_gray.png" height="33" alt=""></a>
             <a href="javascript:;" id="menu" class="menu"></a>
             <ul class="navigation">
                 <li>
-                    <a href="./list.html">项目展示</a>
+                    <a href="./list.html">简介</a>
                 </li>
                 <li>
-                    <a href="./contact.html">联系我们</a>
+                    <a href="./list.html" class="current">项目</a>
+                </li>
+                <li>
+                    <a href="./list.html">媒体</a>
+                </li>
+                <li>
+                    <a href="./contact.html">联系</a>
+                </li>
+                <li>
+                </li>
+                <li>
+                    <span class="cnBtn">中文</span> |
+                    <span class="enBtn">EN</span>
                 </li>
             </ul>
         </div> 
@@ -36,7 +49,7 @@
     <ul class="projects clear auto1180" id="container" page="1">
         <!-- <li>
             <a href="https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg">
-                <div class="project-image lazyload loaded" style="background-image: url(./img/list/halu.jpg);"></div>
+                <div class="project-image lazyload loaded" style="background-image: url(./static/img/list/halu.jpg);"></div>
                 <span><b>2018</b>阳朔糖舍酒店</span>
             </a>
         </li>
@@ -75,6 +88,23 @@
     </div>
 </body>
 <script>
+    $('.cnBtn').click(function() {
+        $('body').removeClass('en');
+        $('body').addClass('cn');
+        if($('body').hasClass('showmenu')) {
+            $('body').removeClass('showmenu');
+        }
+    });
+
+    $('.enBtn').click(function() {
+        // console.log('.en',$('body').classList)
+        $('body').addClass('en');
+        $('body').removeClass('cn');
+        if($('body').hasClass('showmenu')) {
+            $('body').removeClass('showmenu');
+        }
+    });
+
     HTMLElement.prototype.appendHTML = function(html) {
         let divTemp = document.createElement("div");
         let nodes = null;
@@ -97,8 +127,9 @@
             var item = data[i];
             var li = `<li>
                         <a href="${item.projectUrl}">
-                            <div class="project-image" style="background-image: url(./img/list/${item.projectImg});"></div>
-                            <span><b>${item.projectDes}</b>${item.projectName}</span>
+                            <div class="project-image" style="background-image: url(./static/img/list/${item.projectImg});"></div>
+                            <span class="cnEl"><b>${item.projectDes}</b>${item.projectName}</span>
+                            <span class="enEl"><b>${item.projectDes}</b>${item.projectNameEn}</span>
                         </a>
                     </li>`;
             document.getElementById('container').appendHTML(li);
@@ -108,42 +139,39 @@
     var data = [
         {
             "id": 1,
-            "projectName": "哈鹿加油站",
-            "projectDes": "2007",
-            "projectImg": "halu.jpg",
+            "projectName": "白象食品博物馆",
+            "projectNameEn": "Bainatas Food Pavilion",
+            "projectDes": "2018",
+            "projectImg": "Bainatas_Food_Pavilion.jpg",
             "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
         }, {
             "id": 2,
-            "projectName": "白象食品博物馆",
-            "projectDes": "2008",
-            "projectImg": "baixiang.jpeg",
+            "projectName": "千渡·小城春天",
+            "projectNameEn": "Spring City Center",
+            "projectDes": "2020",
+            "projectImg": "Spring_City_Center.jpg",
             "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
-        },
-        {
-            "id": 1,
-            "projectName": "哈鹿加油站",
-            "projectDes": "2007",
-            "projectImg": "halu.jpg",
-            "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
         }, {
-            "id": 2,
-            "projectName": "白象食品博物馆",
-            "projectDes": "2008",
-            "projectImg": "baixiang.jpeg",
-            "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
-        },
-        {
-            "id": 1,
-            "projectName": "哈鹿加油站",
-            "projectDes": "2007",
-            "projectImg": "halu.jpg",
-            "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
+            "id": 3,
+            "projectName": "十竹斋艺术馆",
+            "projectNameEn": "TenBamboo Studio Art Gallery",
+            "projectDes": "2020",
+            "projectImg": "Ten Bamboo Studio Art Gallery.jpg",
+            "projectUrl": "公众号链接"
         }, {
-            "id": 2,
-            "projectName": "白象食品博物馆",
-            "projectDes": "2008",
-            "projectImg": "baixiang.jpeg",
-            "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
+            "id": 4,
+            "projectName": "哈鹿加油站",
+            "projectNameEn": "HELLO Gas Pavilion",
+            "projectDes": "2023",
+            "projectImg": "HELLO Gas Pavilion.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 5,
+            "projectName": "常青松社区",
+            "projectNameEn": "Evergreen Community",
+            "projectDes": "2023",
+            "projectImg": "Evergreen Community.jpg",
+            "projectUrl": "公众号链接"
         }
     ];
 
@@ -169,6 +197,8 @@
     }
 
     document.getElementById("menu").addEventListener("click", show);
+
+
 
     // $(function(){
     //     $(window).scroll(function(event) {

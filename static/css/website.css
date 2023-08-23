@@ -33,7 +33,7 @@
 
 html { overflow-y: scroll; }
 	html.bodyFix { overflow: hidden; }
-body { background: #FFF; font-size: 14px; line-height: 22px; -webkit-text-size-adjust:100%; padding-top: 63px; }
+body { background: #FFF; font-size: 14px; line-height: 22px; -webkit-text-size-adjust:100%; padding-top: 80px; }
 	body.white { padding-top: 0; transition: none; }
 	body.white2 { padding-top: 0; }
 body, input, textarea, select { color: #474342; font-family: Helvetica_0, 'PingFangSC-Regular', 'Microsoft YaHei', '微软雅黑', sans-serif; }
@@ -53,6 +53,10 @@ input[type=submit], input[type=reset], input[type=number], input[type=tel],
 input[type=text], input[type=password], button, textarea { -webkit-appearance: none !important; margin: 0; }
 input[type=number] { -moz-appearance: textfield; }
 input, textarea, button { border-radius: 0; }
+
+.cn .enEl, .en .cnEl {
+	display: none;
+}
 
 .clear:after { display:block; clear:both; content:''; visibility:hidden; height:0; }.clear { zoom:1; }
 .breakall { word-break:break-all; word-wrap:break-word; }
@@ -250,7 +254,16 @@ height: 200px;
 	.navigation { overflow: hidden; line-height: 28px; font-size: 16px; padding-top: 3px; letter-spacing: 0.4px; float:right;}
 		.navigation li { float: left; margin-right: 30px; padding: 0 5px; }
 			.navigation a.current, .filter a.is-checked { color: #474342; }
-		.navigation li:nth-last-of-type(1) {margin-right: 0;}
+		.navigation li:nth-last-of-type(1) { 
+			font-size: 12px; 
+			margin-right: 0; 
+			width: 54px; 
+			text-align: center; 
+			margin-left: -10px;
+		}
+		span {
+			color: lightgray;
+		}
 .white .header { background: transparent; }
 	.white .header .logo { background: url(../img/logo_w@2x.png) no-repeat; background-size: auto 33px; }
 		.white .header .logo img { visibility: hidden; }
@@ -421,7 +434,7 @@ height: 200px;
 	.address { position: static; margin-top: 40px; }
 }
 @media screen and (max-width: 1000px){
-	body { padding-top: 80px; }
+	/* body { padding-top: 80px; } */
 	.header { padding: 18px 0 10px; }
 		.logo { margin-right: 70px; }
 		.navigation li { margin-right: 14px; }
