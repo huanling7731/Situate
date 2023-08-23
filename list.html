@@ -25,17 +25,21 @@
             <a href="" class="logo"><img src="./static/img/logo_gray.png" height="33" alt=""></a>
             <a href="javascript:;" id="menu" class="menu"></a>
             <ul class="navigation">
-                <li>
-                    <a href="./list.html">简介</a>
+                <li data-tab="office" class="current">
+                    <a href="javascript:;" class="cnEl">简介</a>
+                    <a href="javascript:;" class="enEl">OFFICE</a>
                 </li>
-                <li>
-                    <a href="./list.html" class="current">项目</a>
+                <li data-tab="project">
+                    <a href="javascript:;" class="cnEl">项目</a>
+                    <a href="javascript:;" class="enEl">PROJECT</a>
                 </li>
-                <li>
-                    <a href="./list.html">媒体</a>
+                <li data-tab="media">
+                    <a href="javascript:;" class="cnEl">媒体</a>
+                    <a href="javascript:;" class="enEl">MEDIA</a>
                 </li>
-                <li>
-                    <a href="./contact.html">联系</a>
+                <li data-tab="contact">
+                    <a href="javascript:;" class="cnEl">联系</a>
+                    <a href="javascript:;" class="enEl">CONTACT</a>
                 </li>
                 <li>
                 </li>
@@ -46,7 +50,8 @@
             </ul>
         </div> 
     </div>
-    <section class="">
+    <section id="office"></section>
+    <section id="project">
         <ul class="projects clear auto1180" id="container" page="1">
             <!-- <li>
                 <a href="https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg">
@@ -84,7 +89,7 @@
     </div>
     <iframe src="https://mp.weixin.qq.com/mp/wappoc_appmsgcaptcha?poc_token=HJzk4mSjzcWZg5gh9EmPW-m_f9h0u_W6-GV5bcoy&target_url=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FbpgaDPFqaKiQR_wkDz9Sbg">
     </iframe> -->
-    <section class="showTab">
+    <section class="showTab" id="media">
         <div class="job-item">
             <dl class="auto1180 media1 clear" id="zhi">
                 <dd>
@@ -113,6 +118,7 @@
             </dl>				             
         </div>
     </section>
+    <section id="contact"></section>
     <div class="file">
         <div style="color:lightgray;">SITUATE Architecture © All rights reserved.</div>
         <a href="https://beian.miit.gov.cn/">京ICP备18058515号</a>
@@ -134,6 +140,41 @@
         if($('body').hasClass('showmenu')) {
             $('body').removeClass('showmenu');
         }
+    });
+
+    function clearTabState() {
+        $("[data-tab='office']").removeClass('current');
+        $("[data-tab='project']").removeClass('current');
+        $("[data-tab='media']").removeClass('current');
+        $("[data-tab='contact']").removeClass('current');
+        $('#office').css('display', 'none');
+        $('#project').css('display', 'none');
+        $('#media').css('display', 'none');
+        $('#contact').css('display', 'none');
+    }
+
+    $("[data-tab='office']").click(function() {
+        clearTabState();
+        $(this).addClass('current');
+        $('#office').css('display', 'block');
+    });
+
+    $("[data-tab='project']").click(function() {
+        clearTabState();
+        $(this).addClass('current');
+        $('#project').css('display', 'block');
+    });
+
+    $("[data-tab='media']").click(function() {
+        clearTabState();
+        $(this).addClass('current');
+        $('#media').css('display', 'block');
+    });
+
+    $("[data-tab='contact']").click(function() {
+        clearTabState();
+        $(this).addClass('current');
+        $('#contact').css('display', 'block');
     });
 
     HTMLElement.prototype.appendHTML = function(html) {

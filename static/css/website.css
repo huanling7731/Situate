@@ -2,17 +2,14 @@
 /* CSS Document */
 
 @font-face {
-    /* font-family: 'Cera Pro';
-	src: url('fonts/Cera Pro.eot'); */
-	font-family: 'Helvetica_0';
-    src: url('fonts/Helvetica_0.eot');
-    src: url('fonts/Helvetica_0.eot') format('embedded-opentype'),
-         url('fonts/Helvetica_0.woff2') format('woff2'),
-         url('fonts/Helvetica_0.woff') format('woff'),
-         url('fonts/Helvetica_0.ttf') format('truetype'),
-         url('fonts/Helvetica_0.svg#Helvetica_0') format('svg');
+    font-family: 'Cera Pro Light';
+    src: url('../fonts/Cera_Pro_Medium.eot') format('embedded-opentype'),
+         url('../fonts/Cera_Pro_Medium.woff2') format('woff2'),
+         url('../fonts/Cera_Pro_Medium.woff') format('woff'),
+         url('../fonts/Cera_Pro_Light.ttf') format('truetype'),
+         url('../fonts/Cera_Pro_Medium.svg#Helvetica_0') format('svg');
 }
-@font-face {
+/* @font-face {
     font-family: 'Helvetica_1';
     src: url('fonts/Helvetica_1.eot');
     src: url('fonts/Helvetica_1.eot') format('embedded-opentype'),
@@ -29,7 +26,7 @@
          url('fonts/Helvetica_4.woff') format('woff'),
          url('fonts/Helvetica_4.ttf') format('truetype'),
          url('fonts/Helvetica_4.svg#Helvetica_1') format('svg');
-}
+} */
 
 
 
@@ -38,7 +35,7 @@ html { overflow-y: scroll; }
 body { background: #FFF; font-size: 14px; line-height: 22px; -webkit-text-size-adjust:100%; padding-top: 80px; }
 	body.white { padding-top: 0; transition: none; }
 	body.white2 { padding-top: 0; }
-body, input, textarea, select { color: #474342; font-family: Helvetica_0, 'PingFangSC-Regular', 'Microsoft YaHei', '微软雅黑', sans-serif; }
+body, input, textarea, select { color: #474342; font-family: 'Cera Pro Medium', 'PingFangSC-Regular', 'Microsoft YaHei', '微软雅黑', sans-serif; }
 body, p, ul, dl, dd, form, textarea, input, ol { margin: 0; }
 ul, ol, td, th { padding: 0; list-style: none outside; }
 a { color: #AAA; text-decoration: none; transition: color 0.2s; }
@@ -261,7 +258,8 @@ height: 200px;
 	.logo { float: left; margin: 0 140px 0 0; }
 	.navigation { overflow: hidden; line-height: 28px; font-size: 16px; padding-top: 3px; letter-spacing: 0.4px; float:right;}
 		.navigation li { float: left; margin-right: 30px; padding: 0 5px; }
-			.navigation a.current, .filter a.is-checked { color: #474342; }
+		.navigation .enEl { font-family: 'Cera Pro Light'; }
+			.navigation li.current a, .filter a.is-checked { color: #474342; }
 		.navigation li:nth-last-of-type(1) { 
 			font-size: 12px; 
 			margin-right: 0; 
