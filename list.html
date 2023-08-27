@@ -9,20 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, target-densitydpi=medium-dpi, minimal-ui">
     <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
-    <link rel="stylesheet" type="text/css" href="./static/css/xiwen.css">
     <link rel="stylesheet" type="text/css" href="./static/css/website.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/xiwen.css">
     <link rel="stylesheet" type="text/css" href="/public/home/css/xiwen.css">
     <style>
         .Contact{font-family:"Noto Sans S Chinese Thin";text-align: center; margin-top:2px;font-size:12px;Width:320px;Float:center;margin-left:auto;margin-right:auto;}
         .file{font-family:"Noto Sans S Chinese Thin";text-align: center;padding-bottom:20px;margin-left:auto;margin-right:auto;font-size:8px;}
         a{color:lightgray}
     </style>
+    <link rel="stylesheet" href="./static/css/swiper-bundle.min.css">
     <script src="./static/js/jquery-3.7.0.min.js"></script>
+    <script src="./static/js/swiper-bundle.min.js"></script>
 </head>
 <body class="cn">
     <div class="header" id="header">
         <div class="auto1180 clear">
-            <a href="" class="logo"><img src="./static/img/logo_gray.png" height="33" alt=""></a>
+            <a href="" class="logo"><img src="./static/img/logo_Hori_gray.png" height="33" alt=""></a>
             <a href="javascript:;" id="menu" class="menu"></a>
             <ul class="navigation">
                 <li data-tab="office" class="current">
@@ -50,7 +52,15 @@
             </ul>
         </div> 
     </div>
-    <section id="office"></section>
+    <section id="office">
+        <div class="swiper gallery">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(./static/img/list/Spring_City_Center.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div>
+            </div>
+          </div>
+    </section>
     <section id="project">
         <ul class="projects clear auto1180" id="container" page="1">
             <!-- <li>
@@ -67,33 +77,13 @@
             </li> -->
         </ul>
     </section>
-    <!-- <div id="lian" style="padding-top: 1px;">
-        <div class="contact auto1180">
-                <img src="/public/home/image/map3.png" class="xs-hidden" alt="">
-                <img src="/public/home/image/map3.jpg" class="xs-visible" alt="">
-                <div class="address">
-                    <div class="lian">联系方式</div>
-                    <p style="color:#AAA;">北京市朝阳区工人体育场北路4号22号楼409室，100027</p>
-                    <p><a href="tel:+8610-65167798">电话：+8610-65167798</a></p>
-                    <p><a href="tel:+8610-65167706">传真：+8610-65167706</a></p>
-                    <p><a href="mailto:info@vectorarchitects.com">电邮：info@vectorarchitects.com</a></p>
-                    <p><a href="mailto:hr@vectorarchitects.com">工作申请：hr@vectorarchitects.com</a></p>
-                    <div class="share">
-                        <a href="javascript:;" class="wechat"><img src="/public/home/image/qrcode.jpg" alt=""></a>
-                        <a href="https://www.weibo.com/vectorarchitects" target="_blank" class="weibo"></a>
-                        <a href="https://www.instagram.com/vectorarchitects/" target="_blank" class="instagram"></a>
-                        <a href="https://www.facebook.com/vectorarchi/" target="_blank" class="facebook"></a>
-                    </div>
-                </div>
-        </div>
-    </div>
     <iframe src="https://mp.weixin.qq.com/mp/wappoc_appmsgcaptcha?poc_token=HJzk4mSjzcWZg5gh9EmPW-m_f9h0u_W6-GV5bcoy&target_url=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FbpgaDPFqaKiQR_wkDz9Sbg">
     </iframe> -->
-    <section class="showTab" id="media">
+    <section id="media">
         <div class="job-item">
             <dl class="auto1180 media1 clear" id="zhi">
                 <dd>
-                    <img src="./static/img/logo_gray.png" width="250" alt="">
+                    <img src="./static/img/logo_Hori_gray.png" width="250" alt="">
                 </dd>
                 <dt class="cnEl">
                     <h2>事务所简介</h2>
@@ -118,13 +108,52 @@
             </dl>				             
         </div>
     </section>
-    <section id="contact"></section>
-    <div class="file">
+    <section id="contact" style="display: block;">
+        <dl class="auto1180 contact1 clear">
+            <dd class="img">
+                <img src="./static/img/weibo.png" width="250" alt="">
+                <a href="http://m.weibo.cn/u/6811134338" target="_blank">weibo@ SITUATE 上下四方</a>
+                <!-- <div></div> -->
+            </dd>
+            <dd class="img">
+                <img src="./static/img/weixin.png" width="250" alt="">
+                <a href="javascript:;">wechat@ SITUATE 上下四方</a>
+            </dd>
+        </dl>	
+        <dl class="auto1180 text">
+            <dd class="a"><a href="mailto:office@situatearch.com">E-mail: office@situatearch.com</a></dd>
+            <dd class="a"><a href="tel:+8610-67111521">Tel: +8610-67111521</a></dd>
+        </dl>           
+    </section>
+    <div class="white-footer">
+        <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#FFF;">
+            京ICP备18058515号</a>
+    </div>
+    <div class="footer">
+        SITUATE Architecture © All rights reserved.
+        <span>
+            <a href="https://beian.miit.gov.cn/" target="_blank" style="font-size:12px;">
+                京ICP备18058515号</a>
+        </span>
+    </div>
+    <!-- <div class="file">
         <div style="color:lightgray;">SITUATE Architecture © All rights reserved.</div>
         <a href="https://beian.miit.gov.cn/">京ICP备18058515号</a>
-    </div>
+    </div> -->
 </body>
 <script>
+    function initSwiper () {
+        var mySwiper = new Swiper('.swiper', {
+            autoplay: true,//可选选项，自动滑动
+            speed:300,
+            autoplay : {
+                delay: 1000
+            },
+        });
+    }
+
+    initSwiper();
+    
     $('.cnBtn').click(function() {
         $('body').removeClass('en');
         $('body').addClass('cn');
@@ -151,12 +180,15 @@
         $('#project').css('display', 'none');
         $('#media').css('display', 'none');
         $('#contact').css('display', 'none');
+        $('body').removeClass('showmenu white');
     }
 
     $("[data-tab='office']").click(function() {
         clearTabState();
         $(this).addClass('current');
         $('#office').css('display', 'block');
+        $('body').addClass('white');
+        initSwiper();
     });
 
     $("[data-tab='project']").click(function() {
