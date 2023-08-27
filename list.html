@@ -51,8 +51,7 @@
         <div class="swiper gallery">
             <div class="swiper-wrapper">
               <!-- <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div>
-              <div class="swiper-slide" style="background-image: url(./static/img/list/Spring_City_Center.jpg);"></div>
-              <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div> -->
+              <div class="swiper-slide" style="background-image: url(./static/img/list/Spring_City_Center.jpg);"></div> -->
             </div>
           </div>
     </section>
@@ -197,7 +196,7 @@
     var data = [
         {
             "id": 1,
-            "projectName": "白象食品博物馆",
+            "projectName": "白象食品博物馆模拟",
             "projectNameEn": "Bainatas Food Pavilion",
             "projectDes": "2018",
             "projectImg": "Bainatas_Food_Pavilion.jpg",
@@ -296,23 +295,34 @@
         }
     ];
 
+    // var url = "./data/list.json"
+    // // 申明一个XMLHttpRequest
+    // var request = new XMLHttpRequest();
+    // // 设置请求方法与路径
+    // request.open("get", url);
+    // // 不发送数据到服务器
+    // request.send(null);
+    // //XHR对象获取到返回信息后执行
+    // request.onload = function () {
+    //     // 解析获取到的数据
+    //     var data = JSON.parse(request.responseText);
+    //     console.log(data);
+    // }
 
-    renderProject(data);
-    renderSwiper(data);
-
-    var url = "./data/list.json"
-    // 申明一个XMLHttpRequest
-    var request = new XMLHttpRequest();
-    // 设置请求方法与路径
-    request.open("get", url);
-    // 不发送数据到服务器
-    request.send(null);
-    //XHR对象获取到返回信息后执行
-    request.onload = function () {
-        // 解析获取到的数据
-        var data = JSON.parse(request.responseText);
-        console.log(data);
-    }
+    $.ajax({
+        type: 'GET', // 请求的方式
+        url: './data/list.json',  // 请求的 URL 地址
+        success: function(res) { // 请求成功之后的回调函数
+            // 解析获取到的数据
+            // var data = JSON.parse(request.responseText);
+            console.log('success', data);
+        },
+        complete: function(res) { // 请求成功之后的回调函数
+            renderProject(data);
+            renderSwiper(data);
+            console.log('complete', data);
+        },
+    });
     
     // 菜单功能
     $('.cnBtn').click(function() {

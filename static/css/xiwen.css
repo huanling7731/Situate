@@ -221,9 +221,9 @@
 
 /* -----------------------------------手机版------------------------------------ */
 @media screen and (max-width: 900px){
-	body {
+	/* body {
 		padding-top: 55px;
-	}
+	} */
 	.header {
 		padding: 18px 0 14px;
 	}
