@@ -29,7 +29,7 @@ systemctl status httpd.service 这个能查到是否启动成功
 }
 ```
 
-命名规范：字体和图片命名为首字母大写加下划线，如Cera_Pro_Medium
+命名规范：字体和图片命名为首字母大写加下划线，如Cera_Pro_Light
 每种字体不同给一份统一的文件，不用区分粗细斜体，文件格式包括woff2、woff、ttf、svg、eot
 
 # 相关地址

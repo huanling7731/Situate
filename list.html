@@ -12,11 +12,6 @@
     <link rel="stylesheet" type="text/css" href="./static/css/website.css">
     <link rel="stylesheet" type="text/css" href="./static/css/xiwen.css">
     <link rel="stylesheet" type="text/css" href="/public/home/css/xiwen.css">
-    <style>
-        .Contact{font-family:"Noto Sans S Chinese Thin";text-align: center; margin-top:2px;font-size:12px;Width:320px;Float:center;margin-left:auto;margin-right:auto;}
-        .file{font-family:"Noto Sans S Chinese Thin";text-align: center;padding-bottom:20px;margin-left:auto;margin-right:auto;font-size:8px;}
-        a{color:lightgray}
-    </style>
     <link rel="stylesheet" href="./static/css/swiper-bundle.min.css">
     <script src="./static/js/jquery-3.7.0.min.js"></script>
     <script src="./static/js/swiper-bundle.min.js"></script>
@@ -52,17 +47,17 @@
             </ul>
         </div> 
     </div>
-    <section id="office">
+    <section id="office" style="display: block;">
         <div class="swiper gallery">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div>
+              <!-- <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div>
               <div class="swiper-slide" style="background-image: url(./static/img/list/Spring_City_Center.jpg);"></div>
-              <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div> -->
             </div>
           </div>
     </section>
     <section id="project">
-        <ul class="projects clear auto1180" id="container" page="1">
+        <ul class="projects clear auto1180" id="projectContainer" page="1">
             <!-- <li>
                 <a href="https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg">
                     <div class="project-image lazyload loaded" style="background-image: url(./static/img/list/halu.jpg);"></div>
@@ -77,7 +72,7 @@
             </li> -->
         </ul>
     </section>
-    <iframe src="https://mp.weixin.qq.com/mp/wappoc_appmsgcaptcha?poc_token=HJzk4mSjzcWZg5gh9EmPW-m_f9h0u_W6-GV5bcoy&target_url=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FbpgaDPFqaKiQR_wkDz9Sbg">
+    <!-- <iframe src="https://mp.weixin.qq.com/mp/wappoc_appmsgcaptcha?poc_token=HJzk4mSjzcWZg5gh9EmPW-m_f9h0u_W6-GV5bcoy&target_url=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FbpgaDPFqaKiQR_wkDz9Sbg">
     </iframe> -->
     <section id="media">
         <div class="job-item">
@@ -108,7 +103,7 @@
             </dl>				             
         </div>
     </section>
-    <section id="contact" style="display: block;">
+    <section id="contact">
         <dl class="auto1180 contact1 clear">
             <dd class="img">
                 <img src="./static/img/weibo.png" width="250" alt="">
@@ -142,6 +137,25 @@
     </div> -->
 </body>
 <script>
+    // 公共
+    HTMLElement.prototype.appendHTML = function(html) {
+        let divTemp = document.createElement("div");
+        let nodes = null;
+        let fragment = document.createDocumentFragment();
+        divTemp.innerHTML = html;
+        nodes = divTemp.childNodes;
+        nodes.forEach(item => {
+            fragment.appendChild(item.cloneNode(true));
+        })
+        // 插入到最后 append
+        this.appendChild(fragment);
+        // 在最前插入 prepend
+        // this.insertBefore(fragment, this.firstChild);
+        nodes = null;
+        fragment = null;
+    };
+
+    // 首页初始化
     function initSwiper () {
         var mySwiper = new Swiper('.swiper', {
             autoplay: true,//可选选项，自动滑动
@@ -151,9 +165,156 @@
             },
         });
     }
-
-    initSwiper();
     
+    initSwiper();
+    $('body').addClass('white');
+    // var href = window.location.href;
+    // console.log($);
+    // var url = $.url(href);
+    // console.log(url.param('tab'));
+    function renderSwiper(data) {
+        for(var i=0; i<data.length; i++) {
+            var item = data[i];
+            var div = `<div class="swiper-slide" style="background-image: url(./static/img/list/${item.projectImg});"></div>`;
+            document.getElementsByClassName('swiper-wrapper')[0].appendHTML(div);
+        }
+    }
+
+    function renderProject(data) {
+        for(var i=0; i<data.length; i++) {
+            var item = data[i];
+            var li = `<li>
+                        <a href="${item.projectUrl}">
+                            <div class="project-image" style="background-image: url(./static/img/list/${item.projectImg});"></div>
+                            <span class="cnEl"><b>${item.projectDes}</b>${item.projectName}</span>
+                            <span class="enEl"><b>${item.projectDes}</b>${item.projectNameEn}</span>
+                        </a>
+                    </li>`;
+            document.getElementById('projectContainer').appendHTML(li);
+        }
+    }
+
+    var data = [
+        {
+            "id": 1,
+            "projectName": "白象食品博物馆",
+            "projectNameEn": "Bainatas Food Pavilion",
+            "projectDes": "2018",
+            "projectImg": "Bainatas_Food_Pavilion.jpg",
+            "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
+        }, {
+            "id": 2,
+            "projectName": "千渡·小城春天",
+            "projectNameEn": "Spring City Center",
+            "projectDes": "2020",
+            "projectImg": "Spring_City_Center.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 3,
+            "projectName": "十竹斋艺术馆",
+            "projectNameEn": "TenBamboo Studio Art Gallery",
+            "projectDes": "2020",
+            "projectImg": "Ten_Bamboo_Studio_Art_Gallery.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 4,
+            "projectName": "哈鹿加油站",
+            "projectNameEn": "HELLO Gas Pavilion",
+            "projectDes": "2023",
+            "projectImg": "HELLO_Gas_Pavilion.jpg",
+            "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
+        }, {
+            "id": 5,
+            "projectName": "常青松社区",
+            "projectNameEn": "Evergreen Community",
+            "projectDes": "2023",
+            "projectImg": "Evergreen_Community.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 6,
+            "projectName": "荆秋缘接待中心",
+            "projectNameEn": "JingQiuYuan Reception Center",
+            "projectDes": "2018",
+            "projectImg": "JingQiuYuan_Reception_Center.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 7,
+            "projectName": "陶瓷工厂乐园",
+            "projectNameEn": "PotteryKidsFactory",
+            "projectDes": "2018",
+            "projectImg": "Pottery_Kids_Factory.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 8,
+            "projectName": "桂圆中学",
+            "projectNameEn": "GuiYuan Middle School",
+            "projectDes": "2018",
+            "projectImg": "GuiYuan_Middle_School.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 9,
+            "projectName": "X 地产办公",
+            "projectNameEn": "X Real Estate Office",
+            "projectDes": "2020",
+            "projectImg": "X_Real_Estate_Office.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 10,
+            "projectName": "千渡·东山晴",
+            "projectNameEn": "DongShanQing Residences",
+            "projectDes": "2017",
+            "projectImg": "DongShanQing_Residences.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 11,
+            "projectName": "长江村村民活动中心",
+            "projectNameEn": "Changjing Village Committee",
+            "projectDes": "2019",
+            "projectImg": "Changjing_Village_Committee.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 12,
+            "projectName": "太原农机研究院住宅",
+            "projectNameEn": "Taiyuan Residential Project",
+            "projectDes": "2018",
+            "projectImg": "Taiyuan_Residential_Project.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 13,
+            "projectName": "某接待中心",
+            "projectNameEn": "X Reception Center",
+            "projectDes": "2020",
+            "projectImg": "X_Reception_Center.jpg",
+            "projectUrl": "公众号链接"
+        }, {
+            "id": 14,
+            "projectName": "中核保障区规划设计",
+            "projectNameEn": "CHINA NUCLEAR DEVELOPMENT ZONE CONCEPT MASTERPLAN",
+            "projectDes": "2020",
+            "projectImg": "CHINA_NUCLEAR_DEVELOPMENT_ZONE_CONCEPT_MASTERPLAN.jpg",
+            "projectUrl": "公众号链接"
+        }
+    ];
+
+
+    renderProject(data);
+    renderSwiper(data);
+
+    var url = "./data/list.json"
+    // 申明一个XMLHttpRequest
+    var request = new XMLHttpRequest();
+    // 设置请求方法与路径
+    request.open("get", url);
+    // 不发送数据到服务器
+    request.send(null);
+    //XHR对象获取到返回信息后执行
+    request.onload = function () {
+        // 解析获取到的数据
+        var data = JSON.parse(request.responseText);
+        console.log(data);
+    }
+    
+    // 菜单功能
     $('.cnBtn').click(function() {
         $('body').removeClass('en');
         $('body').addClass('cn');
@@ -209,100 +370,12 @@
         $('#contact').css('display', 'block');
     });
 
-    HTMLElement.prototype.appendHTML = function(html) {
-        let divTemp = document.createElement("div");
-        let nodes = null;
-        let fragment = document.createDocumentFragment();
-        divTemp.innerHTML = html;
-        nodes = divTemp.childNodes;
-        nodes.forEach(item => {
-            fragment.appendChild(item.cloneNode(true));
-        })
-        // 插入到最后 append
-        this.appendChild(fragment);
-        // 在最前插入 prepend
-        // this.insertBefore(fragment, this.firstChild);
-        nodes = null;
-        fragment = null;
-    };
-
-    function render(data) {
-        for(var i=0; i<data.length; i++) {
-            var item = data[i];
-            var li = `<li>
-                        <a href="${item.projectUrl}">
-                            <div class="project-image" style="background-image: url(./static/img/list/${item.projectImg});"></div>
-                            <span class="cnEl"><b>${item.projectDes}</b>${item.projectName}</span>
-                            <span class="enEl"><b>${item.projectDes}</b>${item.projectNameEn}</span>
-                        </a>
-                    </li>`;
-            document.getElementById('container').appendHTML(li);
-        }
-    }
-
-    var data = [
-        {
-            "id": 1,
-            "projectName": "白象食品博物馆",
-            "projectNameEn": "Bainatas Food Pavilion",
-            "projectDes": "2018",
-            "projectImg": "Bainatas_Food_Pavilion.jpg",
-            "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
-        }, {
-            "id": 2,
-            "projectName": "千渡·小城春天",
-            "projectNameEn": "Spring City Center",
-            "projectDes": "2020",
-            "projectImg": "Spring_City_Center.jpg",
-            "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
-        }, {
-            "id": 3,
-            "projectName": "十竹斋艺术馆",
-            "projectNameEn": "TenBamboo Studio Art Gallery",
-            "projectDes": "2020",
-            "projectImg": "Ten Bamboo Studio Art Gallery.jpg",
-            "projectUrl": "公众号链接"
-        }, {
-            "id": 4,
-            "projectName": "哈鹿加油站",
-            "projectNameEn": "HELLO Gas Pavilion",
-            "projectDes": "2023",
-            "projectImg": "HELLO Gas Pavilion.jpg",
-            "projectUrl": "公众号链接"
-        }, {
-            "id": 5,
-            "projectName": "常青松社区",
-            "projectNameEn": "Evergreen Community",
-            "projectDes": "2023",
-            "projectImg": "Evergreen Community.jpg",
-            "projectUrl": "公众号链接"
-        }
-    ];
-
-    render(data);
-
-    var url = "./data/list.json"
-    // 申明一个XMLHttpRequest
-    var request = new XMLHttpRequest();
-    // 设置请求方法与路径
-    request.open("get", url);
-    // 不发送数据到服务器
-    request.send(null);
-    //XHR对象获取到返回信息后执行
-    request.onload = function () {
-        // 解析获取到的数据
-        var data = JSON.parse(request.responseText);
-        console.log(data);
-    }
-
     function show () {
         var body = document.getElementsByTagName('body')[0];
         body.classList.toggle('showmenu');
     }
 
     document.getElementById("menu").addEventListener("click", show);
-
-
 
     // $(function(){
     //     $(window).scroll(function(event) {
@@ -332,15 +405,6 @@
     //             });
     //         }
     //     });
-    
-    //     // $('.filter-text').click(function(event) {
-    //     //  var wrap = $('.filter-wrap');
-    //     //  if(wrap.hasClass('show')){
-    //     //      wrap.width(0).removeClass('show');
-    //     //  }else{
-    //     //      wrap.width(wrap.attr('data-width')).addClass('show');
-    //     //  }
-    //     // });
     // });
     </script>
 </html>
