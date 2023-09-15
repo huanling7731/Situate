@@ -2,9 +2,9 @@
 /* CSS Document */
 
 /* -----------------------------------一级导航------------------------------------ */
-.en .header {
+/* .en .header {
 	padding: 16px 0 13px;
-}
+} */
 
 /*修改关于页面二级分类高度*/
 .header-about div:nth-child(2){
@@ -227,9 +227,9 @@
 	.header {
 		padding: 18px 0 14px;
 	}
-	.en .header {
+	/* .en .header {
 		padding: 17px 0 16px;
-	}
+	} */
 	.en .header-about div:first-child {
 		padding-bottom: 1px;
 	}

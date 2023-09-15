@@ -5,28 +5,32 @@
         "projectNameEn": "Bainatas Food Pavilion",
         "projectDes": "2018",
         "projectImg": "Bainatas_Food_Pavilion.jpg",
-        "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw"
+        "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw",
+        "showSwiper": 1
     }, {
         "id": 2,
         "projectName": "千渡·小城春天",
         "projectNameEn": "Spring City Center",
         "projectDes": "2020",
         "projectImg": "Spring_City_Center.jpg",
-        "projectUrl": "公众号链接"
+        "projectUrl": "公众号链接",
+        "showSwiper": 1
     }, {
         "id": 3,
         "projectName": "十竹斋艺术馆",
         "projectNameEn": "TenBamboo Studio Art Gallery",
         "projectDes": "2020",
         "projectImg": "Ten_Bamboo_Studio_Art_Gallery.jpg",
-        "projectUrl": "公众号链接"
+        "projectUrl": "公众号链接",
+        "showSwiper": 1
     }, {
         "id": 4,
         "projectName": "哈鹿加油站",
         "projectNameEn": "HELLO Gas Pavilion",
         "projectDes": "2023",
         "projectImg": "HELLO_Gas_Pavilion.jpg",
-        "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg"
+        "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg",
+        "showSwiper": 1
     }, {
         "id": 5,
         "projectName": "常青松社区",

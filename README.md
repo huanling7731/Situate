@@ -36,3 +36,4 @@ systemctl status httpd.service 这个能查到是否启动成功
 
 https://www.vectorarchitects.com/projects
 http://www.situatearchitecture.com/list.html
+https://www.swiper.com.cn/api/index.html
