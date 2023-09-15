@@ -76,7 +76,7 @@
         <div class="job-item">
             <dl class="auto1180 media1 clear" id="zhi">
                 <dd>
-                    <img src="./static/img/Logo_Hori_gray.png" width="280" alt="">
+                    <img src="./static/img/Logo_Hori_gray.png" width="80%" alt="">
                 </dd>
                 <dt class="cnEl">
                     <!-- <h2>事务所简介</h2>                    -->
@@ -164,7 +164,6 @@
         });
     }
     
-    initSwiper();
     $('body').addClass('white');
     // var href = window.location.href;
     // console.log($);
@@ -325,6 +324,7 @@
         complete: function(res) { // 请求成功之后的回调函数
             renderProject(data);
             renderSwiper(data);
+            initSwiper();
             console.log('complete', data);
         },
     });
