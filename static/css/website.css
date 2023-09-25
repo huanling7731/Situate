@@ -3,11 +3,12 @@
 
 @font-face {
     font-family: 'Cera Pro';
-    src: url('../fonts/Cera_Pro_Light.eot') format('embedded-opentype'),
-         url('../fonts/Cera_Pro_Light.woff2') format('woff2'),
-         url('../fonts/Cera_Pro_Light.woff') format('woff'),
+	src: 
+		 /* url('../fonts/Cera_Pro_Light.eot') format('embedded-opentype'), */
+         /* url('../fonts/Cera_Pro_Light.woff2') format('woff2'), */
+         /* url('../fonts/Cera_Pro_Light.woff') format('woff'), */
          url('../fonts/Cera_Pro_Light.ttf') format('truetype'),
-         url('../fonts/Cera_Pro_Light.svg') format('svg');
+         /* url('../fonts/Cera_Pro_Light.svg') format('svg'); */
 }
 
 html { overflow-y: scroll; }
@@ -237,7 +238,7 @@ height: 200px;
 	.logo, .navigation li, body, .jobs { transition: height 0.3s, padding 0.3s, margin 0.3s, top 0.3s; }
 	.logo { float: left; margin: 0 140px 0 0; }
 	.navigation { overflow: hidden; line-height: 28px; font-size: 16px; padding-top: 3px; letter-spacing: 3px; float:right;}
-		.navigation li { width: 100px; float: left; margin-right: 30px; }
+		.navigation li { width: 100px; float: left; margin-right: 14px; }
 		.navigation .enEl { font-family: 'Cera Pro'; font-weight: bolder; }
 			.navigation li.current a, .filter a.is-checked { color: #474342; }
 		.navigation li:nth-last-of-type(1) { 
@@ -303,8 +304,8 @@ height: 200px;
 		}
 	.hasimage-content { overflow: hidden; margin-top: calc(100vh - 63px); background-color: #FFF; position: relative; z-index: 1; }
 	.media1 { 
-		font-family: '微软正黑';
-		font-size: 18px;
+		/* font-family: '微软正黑'; */
+		font-size: 17px;
 		font-weight: 300;
 		line-height: 2;
 		margin: 80px auto;
@@ -470,7 +471,7 @@ height: 200px;
 	/* body { padding-top: 80px; } */
 	.header { padding: 18px 0 10px; }
 		.logo { margin-right: 70px; }
-		.navigation li { margin-right: 14px; }
+		/* .navigation li { margin-right: 14px; } */
 	.jobs { top: 140px; }
 }
 @media screen and (max-width: 900px){
@@ -721,3 +722,8 @@ height: 200px;
 
 .lazyload { opacity: 0; transition: opacity 0.9s, transform 1s ease-out; }
 	.lazyload.loaded { opacity: 1; }
+
+.preLoad {
+	background-image: url(../img/list/Bainatas_Food_Pavilion.jpg); 
+	display: none;
+}

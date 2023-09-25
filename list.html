@@ -46,33 +46,15 @@
             </ul>
         </div> 
     </div>
-    <section id="office" style="display: block;">
+    <section id="home" style="display: block;">
         <div class="swiper gallery">
             <div class="swiper-wrapper">
-              <!-- <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div>
-              <div class="swiper-slide" style="background-image: url(./static/img/list/Spring_City_Center.jpg);"></div> -->
+              <div class="swiper-slide" style="background-image: url(./static/img/list/Bainatas_Food_Pavilion.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(./static/img/list/Spring_City_Center.jpg);"></div>
             </div>
-          </div>
+        </div>
     </section>
-    <section id="project">
-        <ul class="projects clear auto1180" id="projectContainer" page="1">
-            <!-- <li>
-                <a href="https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg">
-                    <div class="project-image lazyload loaded" style="background-image: url(./static/img/list/halu.jpg);"></div>
-                    <span><b>2018</b>阳朔糖舍酒店</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.vectorarchitects.com/projects/30">
-                    <div class="project-image lazyload loaded" style="background-image: url(&quot;https://www.vectorarchitects.com/uploads/img/2018/11/5be50789ac220_min.jpg&quot;);"></div>
-                    <span><b>2017</b>船长之家改造</span>
-                </a>
-            </li> -->
-        </ul>
-    </section>
-    <!-- <iframe src="https://mp.weixin.qq.com/mp/wappoc_appmsgcaptcha?poc_token=HJzk4mSjzcWZg5gh9EmPW-m_f9h0u_W6-GV5bcoy&target_url=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FbpgaDPFqaKiQR_wkDz9Sbg">
-    </iframe> -->
-    <section id="media">
+    <section id="office">
         <div class="job-item">
             <dl class="auto1180 media1 clear" id="zhi">
                 <dd>
@@ -100,6 +82,16 @@
                 </dt>
             </dl>				             
         </div>
+    </section>
+    <section id="project">
+        <ul class="projects clear auto1180" id="projectContainer">
+        </ul>
+    </section>
+    <!-- <iframe src="https://mp.weixin.qq.com/mp/wappoc_appmsgcaptcha?poc_token=HJzk4mSjzcWZg5gh9EmPW-m_f9h0u_W6-GV5bcoy&target_url=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FbpgaDPFqaKiQR_wkDz9Sbg">
+    </iframe> -->
+    <section id="media">
+        <ul class="projects clear auto1180" id="mediaContainer">
+        </ul>
     </section>
     <section id="contact">
         <dl class="code clear">
@@ -129,10 +121,7 @@
                 京ICP备18058515号</a>
         </span>
     </div>
-    <!-- <div class="file">
-        <div style="color:lightgray;">SITUATE Architecture © All rights reserved.</div>
-        <a href="https://beian.miit.gov.cn/">京ICP备18058515号</a>
-    </div> -->
+    <div class="preLoad"></div>
 </body>
 <script>
     // 公共
@@ -152,9 +141,23 @@
         nodes = null;
         fragment = null;
     };
-
-    // 首页初始化
-    function initSwiper () {
+    
+    $('body').addClass('white');
+    // var href = window.location.href;
+    // console.log($);
+    // var url = $.url(href);
+    // console.log(url.param('tab'));
+    function renderSwiper(data) {
+        var swiperWrapper = document.getElementsByClassName('swiper-wrapper')[0];
+        console.log('renderSwiper', swiperWrapper)
+        for(var i = 0; i < data.length; i++) {
+            var item = data[i];
+            if (item.showSwiper) {
+                var div = `<div class="swiper-slide" style="background-image: url(./static/img/home/${item.projectImg});"></div>`;
+                swiperWrapper.appendHTML(div);
+            }
+        }
+        console.log('renderSwiper', swiperWrapper)
         var mySwiper = new Swiper('.swiper', {
             loop: true,
             speed: 300,
@@ -163,33 +166,19 @@
             },
         });
     }
-    
-    $('body').addClass('white');
-    // var href = window.location.href;
-    // console.log($);
-    // var url = $.url(href);
-    // console.log(url.param('tab'));
-    function renderSwiper(data) {
-        for(var i=0; i<data.length; i++) {
-            var item = data[i];
-            if (item.showSwiper) {
-                var div = `<div class="swiper-slide" style="background-image: url(./static/img/list/${item.projectImg});"></div>`;
-                document.getElementsByClassName('swiper-wrapper')[0].appendHTML(div);
-            }
-        }
-    }
 
-    function renderProject(data) {
+    function renderList(dom, tab, data) {
         for(var i=0; i<data.length; i++) {
             var item = data[i];
             var li = `<li>
                         <a href="${item.projectUrl}">
-                            <div class="project-image" style="background-image: url(./static/img/list/${item.projectImg});"></div>
+                            <div class="project-image" style="background-image: url(./static/img/${tab}/${item.projectImg});"></div>
                             <span class="cnEl"><b>${item.projectDes}</b>${item.projectName}</span>
                             <span class="enEl"><b>${item.projectDes}</b>${item.projectNameEn}</span>
                         </a>
                     </li>`;
-            document.getElementById('projectContainer').appendHTML(li);
+            dom.appendHTML(li);
+            $('<img>').attr('src', `./static/img/list/${item.projectImg}`);
         }
     }
 
@@ -313,21 +302,29 @@
     //     console.log(data);
     // }
 
-    $.ajax({
-        type: 'GET', // 请求的方式
-        url: './data/list.json',  // 请求的 URL 地址
-        success: function(res) { // 请求成功之后的回调函数
-            // 解析获取到的数据
-            data = res;
-            console.log('success', data);
-        },
-        complete: function(res) { // 请求成功之后的回调函数
-            renderProject(data);
-            renderSwiper(data);
-            initSwiper();
-            console.log('complete', data);
-        },
-    });
+    function getList(tab) {
+        var dom = document.getElementById(`${tab}Container`);
+        // console.log('getList', dom.innerHTML, dom.innerHTML =='', dom.innerHTML.trim() =='');
+        if (dom.innerHTML.trim()) {
+            return;
+        }
+        
+        $.ajax({
+            type: 'GET', // 请求的方式
+            url: `./data/${tab}_list.json`,  // 请求的 URL 地址
+            success: function(res) { // 请求成功之后的回调函数
+                // 解析获取到的数据
+                data = res;
+                console.log('success', data);
+            },
+            complete: function(res) { // 请求成功之后的回调函数
+                renderList(dom, tab, data);
+                renderSwiper(data);
+                console.log('complete', data);
+            },
+        });
+    }
+    getList('project');
     
     // 菜单功能
     $('.cnBtn').click(function() {
@@ -352,6 +349,7 @@
         $("[data-tab='project']").removeClass('current');
         $("[data-tab='media']").removeClass('current');
         $("[data-tab='contact']").removeClass('current');
+        $('#home').css('display', 'none');
         $('#office').css('display', 'none');
         $('#project').css('display', 'none');
         $('#media').css('display', 'none');
@@ -363,17 +361,17 @@
         clearTabState();
         $(this).addClass('current');
         $('#office').css('display', 'block');
-        $('body').addClass('white');
-        initSwiper();
     });
 
     $("[data-tab='project']").click(function() {
+        getList('project');
         clearTabState();
         $(this).addClass('current');
         $('#project').css('display', 'block');
     });
 
     $("[data-tab='media']").click(function() {
+        getList('media');
         clearTabState();
         $(this).addClass('current');
         $('#media').css('display', 'block');
