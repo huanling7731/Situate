@@ -1,0 +1,119 @@
+[
+    {
+        "id":1,
+        "projectName": "哈鹿加油站",
+        "projectNameEn": "HELLO Gas Pavilion",
+        "projectDes": "2023",
+        "projectImg": "HELLO_Gas_Pavilion.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/bpgaDPFqaKiQR_wkDz9Sbg",
+        "showSwiper": 1
+    }, {
+        "id": 2,
+        "projectName": "千渡·小城春天",
+        "projectNameEn": "Spring City Center",
+        "projectDes": "2020",
+        "projectImg": "Spring_City_Center.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/ehEqjYN0TZQ11Wx6g437yQ",
+        "showSwiper": 1
+    }, {
+        "id": 3,
+        "projectName": "十竹斋艺术馆",
+        "projectNameEn": "TenBamboo Studio Art Gallery",
+        "projectDes": "2020",
+        "projectImg": "Ten_Bamboo_Studio_Art_Gallery.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/LpLYq0-dBohPQr9r8qPY-g",
+        "showSwiper": 1
+    }, {
+        "id": 4,
+        "projectName": "白象食品博物馆",
+        "projectNameEn": "Bainatas Food Pavilion",
+        "projectDes": "2018",
+        "projectImg": "Bainatas_Food_Pavilion.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/2PJUUPzbntt-1r4cuCIdFw",
+        "showSwiper": 1
+    }, {
+        "id": 5,
+        "projectName": "常青松社区",
+        "projectNameEn": "Evergreen Community",
+        "projectDes": "2023",
+        "projectImg": "Evergreen_Community.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 6,
+        "projectName": "荆秋缘接待中心",
+        "projectNameEn": "JingQiuYuan Reception Center",
+        "projectDes": "2018",
+        "projectImg": "JingQiuYuan_Reception_Center.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 7,
+        "projectName": "千渡·东山晴",
+        "projectNameEn": "DongShanQing Residences",
+        "projectDes": "2017",
+        "projectImg": "DongShanQing_Residences.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 8,
+        "projectName": "长江村村民活动中心",
+        "projectNameEn": "Changjing Village Committee",
+        "projectDes": "2019",
+        "projectImg": "Changjing_Village_Committee.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 9,
+        "projectName": "彩虹馆",
+        "projectNameEn": "Taiyuan Residential Project",
+        "projectDes": "2017",
+        "projectImg": "Taiyuan_Residential_Project.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 10,
+        "projectName": "小城春天导客中心",
+        "projectNameEn": "Spring City info",
+        "projectDes": "2018",
+        "projectImg": "Spring_City_info.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 11,
+        "projectName": "陶瓷工厂乐园",
+        "projectNameEn": "PotteryKidsFactory",
+        "projectDes": "2018",
+        "projectImg": "Pottery_Kids_Factory.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 12,
+        "projectName": "桂圆中学",
+        "projectNameEn": "GuiYuan Middle School",
+        "projectDes": "2018",
+        "projectImg": "GuiYuan_Middle_School.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 13,
+        "projectName": "太原农机研究院住宅",
+        "projectNameEn": "Taiyuan Residential Project",
+        "projectDes": "2018",
+        "projectImg": "Taiyuan_Residential_Project.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 14,
+        "projectName": "办公花园",
+        "projectNameEn": "Garden Office Renovation",
+        "projectDes": "2020",
+        "projectImg": "Garden_Office_Renovation.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 15,
+        "projectName": "X茶室",
+        "projectNameEn": "X Teahouse",
+        "projectDes": "2020",
+        "projectImg": "X_Teahouse.jpg",
+        "projectUrl": "公众号链接"
+    }, {
+        "id": 16,
+        "projectName": "中核保障区规划设计",
+        "projectNameEn": "CHINA NUCLEAR DEVELOPMENT ZONE CONCEPT MASTERPLAN",
+        "projectDes": "2020",
+        "projectImg": "CHINA_NUCLEAR_DEVELOPMENT_ZONE_CONCEPT_MASTERPLAN.jpg",
+        "projectUrl": "公众号链接"
+    }
+]

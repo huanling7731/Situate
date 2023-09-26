@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "projectName": "2021 Architizer A+Awards",
+        "projectNameEn": "2021 Architizer A+Awards",
+        "projectDes": "2021",
+        "projectImg": "Archdaily_2022_Ten_Banmboo_Studio.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/vDlql2n2OlSBoODQGgOdhw",
+        "showSwiper": 1
+    }, {
+        "id": 2,
+        "projectName": "Archdaily 2022 年度建筑提名",
+        "projectNameEn": "2022 Archdaily Building of the Year",
+        "projectDes": "2022",
+        "projectImg": "Archdaily_2022_Ten_Banmboo_Studio.jpg",
+        "projectUrl": "https://mp.weixin.qq.com/s/Q3EHiJbNPmtgDVIn-rlIDw"
+    }
+]
