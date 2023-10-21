@@ -4,17 +4,34 @@ https://github.com/huanling7731/Situate
 git commit -m ""
 git push origin main
 
-# 部署
-
-机器地址：https://console.cloud.tencent.com/cvm/instance/index?rid=4
-pasd：R5U2uLAcxhTN
-目录：/var/www/html
-相关命令
-rz
+# 相关命令
+rz 上传
+sz 下载
 unzip
-systemctl restart httpd.service  这个是重启的命令
+systemctl restart httpd.service 这个是重启的命令
 systemctl status httpd.service 这个能查到是否启动成功
 其他方式上传 https://cloud.tencent.com/document/product/213/2133
+
+# 替换数据详细步骤
+
+1. 打开机器地址（https://console.cloud.tencent.com/cvm/instance/index?rid=4），点击右侧登录
+![示例](file:///Users/hh/Downloads/SituateResource/static/img/steps/1.png)
+2. 在弹出框输入密码：R5U2uLAcxhTN
+![示例](file:///Users/hh/Downloads/SituateResource/static/img/steps/2.png)
+3. 在命令行输入以下命令，更新数据文件，执行完一次rz刷新页面可看到新效果
+```
+    cd /var/www/html/data // 切换到数据目录
+    rz -y // 上传新的projectList.json更新项目页数据，上传新的mediaList.json更新媒体页数据数据
+```
+![示例](file:///Users/hh/Downloads/SituateResource/static/img/steps/4.png)
+4. 在命令行输入以下命令，更新图片，执行完一次rz刷新页面可看到新效果
+```
+    cd /var/www/html/static/img/project // 如果需要更换项目页图片，切换到项目页图片目录
+    rz -y // 上传新文件，对应json中的图片名
+    cd /var/www/html/static/img/media // 如果需要更换媒体页图片，切换到媒体页图片目录
+    rz -y // 上传新文件，对应json中的图片名
+```
+![示例](file:///Users/hh/Downloads/SituateResource/static/img/steps/5.png)
 
 # 数据格式
 
